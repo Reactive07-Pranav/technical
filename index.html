@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1b2a" />
+    <title>UN-देखा — On-Demand Format Conversion</title>
+    <link rel="stylesheet" href="styles.css?v=20260823-final-reset" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="UN-देखा home">
+          <img class="brand-logo" src="un-dekha-logo.png" alt="UN-देखा — On-Demand Format Conversion" />
+        </a>
+
+        <nav class="nav-list">
+          <a class="nav-item active" href="#top"><span aria-hidden="true">⌂</span> Home</a>
+          <a class="nav-item" href="#studio"><span aria-hidden="true">✦</span> Conversion studio</a>
+          <a class="nav-item" id="libraryNav" href="#library"><span aria-hidden="true">▤</span> My library</a>
+          <a class="nav-item" href="#insights"><span aria-hidden="true">◌</span> Learning insights</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <button class="profile-card" type="button" aria-label="Open profile">
+            <span class="avatar" id="profileInitials">ST</span>
+            <span><strong class="student-name">Student</strong><small>Student profile · Edit</small></span>
+            <span aria-hidden="true">⌄</span>
+          </button>
+          <button class="support-link" type="button" id="helpBtn"><span aria-hidden="true">?</span> Need a hand?</button>
+        </div>
+      </aside>
+
+      <main id="top">
+        <header class="topbar">
+          <button class="mobile-menu" id="menuBtn" type="button" aria-label="Toggle navigation">☰</button>
+          <div class="welcome"><span class="eyebrow">APEX PROTOCOL · STUDENT SPACE</span><h1>Welcome, <span class="student-name">Student</span></h1></div>
+          <div class="header-actions">
+            <button class="icon-button" type="button" id="contrastBtn" aria-pressed="false" aria-label="Enable dark mode"><span aria-hidden="true">☾</span></button>
+          </div>
+        </header>
+
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <div class="hero-kicker"><span class="pulse" aria-hidden="true"></span> APEX PROTOCOL PRESENTS · YOUR LEARNING, YOUR WAY</div>
+            <h2 id="hero-title">Turn any study material<br />into a format that <em>fits you.</em></h2>
+            <p>UN-देखा reads the room — and your resources. Upload once, then choose the accessible learning experience that helps you understand best.</p>
+            <a class="primary-button" href="#studio"><span aria-hidden="true">＋</span> Transform a resource</a>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="format-float-card card-a"><span>☊</span><small>Audio lesson</small></div>
+            <div class="format-float-card card-b"><span>≋</span><small>Clear captions</small></div>
+            <div class="format-float-card card-c"><span>▧</span><small>Study map</small></div>
+            <div class="hero-core" aria-hidden="true">
+              <svg class="neural-icon" viewBox="0 0 64 64" focusable="false">
+                <path d="M18 20 32 12 48 22M18 20l7 29 20-6 3-21M25 49l7-19 16-8M32 12v18" />
+                <circle cx="18" cy="20" r="5" /><circle cx="32" cy="12" r="5" /><circle cx="48" cy="22" r="5" />
+                <circle cx="32" cy="30" r="6" /><circle cx="25" cy="49" r="5" /><circle cx="45" cy="43" r="5" />
+              </svg>
+            </div>
+            <div class="spark spark-1"></div><div class="spark spark-2"></div><div class="spark spark-3"></div>
+          </div>
+        </section>
+
+        <section class="quick-settings" aria-labelledby="preferences-title">
+          <div class="section-heading"><div><span class="eyebrow">YOUR DEFAULTS</span><h2 id="preferences-title">Built around how you learn</h2></div><button class="text-button" type="button" id="customizeBtn">Customize <span aria-hidden="true">→</span></button></div>
+          <div class="preference-grid">
+            <button class="preference active" type="button" data-preference="Audio narration"><span class="pref-icon lavender" aria-hidden="true">◖</span><span><strong>Audio narration</strong><small>Warm, natural voice</small></span><i aria-hidden="true">✓</i></button>
+            <button class="preference active" type="button" data-preference="Plain language"><span class="pref-icon blue" aria-hidden="true">Aa</span><span><strong>Plain language</strong><small>Keep it clear</small></span><i aria-hidden="true">✓</i></button>
+            <button class="preference active" type="button" data-preference="Interactive flowcharts"><span class="pref-icon green" aria-hidden="true">◈</span><span><strong>Interactive flowcharts</strong><small>Diagrams made explorable</small></span><i aria-hidden="true">✓</i></button>
+          </div>
+        </section>
+
+        <section id="studio" class="studio" aria-labelledby="studio-title">
+          <div class="section-heading"><div><span class="eyebrow">CONVERSION STUDIO</span><h2 id="studio-title">What are we making accessible?</h2></div><span class="supported">PDF · DOCX · PPT · MP3 · MP4</span></div>
+          <div class="studio-grid">
+            <div class="drop-zone" id="dropZone" tabindex="0" role="button" aria-labelledby="uploadTitle" aria-describedby="uploadHelp uploadStatus">
+              <input class="file-input" id="fileInput" type="file" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt,.mp3,.mp4" />
+              <span class="drop-icon" aria-hidden="true">⇧</span>
+              <strong id="uploadTitle">Drop a study resource here</strong>
+              <span>or select a file from your device</span>
+              <button class="upload-browse-button" id="browseFiles" type="button">Browse PDF or PPT <span aria-hidden="true">→</span></button>
+              <small id="uploadHelp">PDF, PPT, DOCX, audio, and video files supported.</small>
+              <p class="upload-status" id="uploadStatus" role="status" aria-live="polite"></p>
+            </div>
+            <div class="or-divider"><span>or</span></div>
+            <div class="paste-card">
+              <span class="paste-icon" aria-hidden="true">⌁</span>
+              <strong>Start with text</strong>
+              <p>Paste a passage, lecture notes, or a video link and we’ll shape it for you.</p>
+              <button class="secondary-button" id="pasteBtn" type="button">Paste text <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="workbench" id="library" tabindex="-1" aria-labelledby="workbench-title">
+          <div class="section-heading"><div><span class="eyebrow">MY LIBRARY</span><h2 id="workbench-title">Your accessible workbench</h2></div><button class="text-button" type="button" id="resetLibraryBtn">Reset library <span aria-hidden="true">↺</span></button></div>
+          <p class="library-status" id="libraryStatus" role="status" aria-live="polite">Your library is ready for your first resource.</p>
+          <div class="empty-library" id="emptyLibrary">
+            <span aria-hidden="true">▧</span>
+            <strong>No learning pathways yet</strong>
+            <p>Upload a PDF, PPT, document, or notes to build your first accessible pathway.</p>
+            <button class="secondary-button" id="emptyLibraryUpload" type="button">Add a resource <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="workbench-grid library-grid" id="libraryGrid"></div>
+          <section class="concept-map-panel hidden" id="conceptMapPanel" aria-labelledby="conceptMapTitle">
+            <div class="concept-map-heading"><div><span class="eyebrow">CROSS-RESOURCE CONNECTIONS</span><h3 id="conceptMapTitle">Concept map</h3></div><button class="text-button" id="refreshConceptMap" type="button">Refresh connections <span aria-hidden="true">↻</span></button></div>
+            <p id="conceptMapIntro">Add two or more resources to uncover connections.</p>
+            <div class="concept-map-canvas" id="conceptMapCanvas" role="list" aria-label="Saved learning-resource concept map"></div>
+            <div class="concept-map-detail" id="conceptMapDetail" role="status" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <section id="insights" class="completion-note" aria-labelledby="insights-title">
+          <span class="completion-note-mark" aria-hidden="true">✓</span>
+          <div><span class="eyebrow">APEX PROTOCOL</span><h2 id="insights-title">Ready when you are.</h2><p>Upload a resource whenever you want to turn it into an accessible learning pathway.</p></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="conversionDialog" class="conversion-dialog" aria-labelledby="dialogTitle">
+      <button class="dialog-close" type="button" aria-label="Close dialog" id="closeDialog">×</button>
+      <div class="conversion-step" id="entryStep">
+        <span class="dialog-icon" aria-hidden="true">✦</span>
+        <span class="eyebrow">UN-देखा CONVERSION</span>
+        <h2 id="dialogTitle">Let’s shape this around you.</h2>
+        <p id="dialogCopy">Choose the formats you’d like UN-देखा to create. You can adjust these anytime.</p>
+        <div class="format-options">
+          <label><input type="checkbox" checked /><span>◖</span><strong>Audio lesson</strong><small>Listen anywhere</small></label>
+          <label><input type="checkbox" checked /><span>Aa</span><strong>Simple notes</strong><small>Plain-language guide</small></label>
+          <label><input type="checkbox" checked /><span>≋</span><strong>Captions</strong><small>Synced transcript</small></label>
+          <label><input type="checkbox" checked /><span>◈</span><strong>Interactive flowchart</strong><small>Explore diagram descriptions</small></label>
+        </div>
+        <button class="primary-button full-button" type="button" id="startConversion">Create my learning pathway <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="conversion-step processing hidden" id="processingStep" aria-live="polite">
+        <div class="processing-orbit" aria-hidden="true"><span>✦</span></div>
+        <span class="eyebrow">WORKING WITH CARE</span>
+        <h2>Building your pathway…</h2>
+        <p id="processLabel">Reading your resource for the ideas that matter.</p>
+        <div class="processing-progress"><span></span></div>
+      </div>
+      <div class="conversion-step result hidden" id="resultStep">
+        <span class="success-icon" aria-hidden="true">✓</span>
+        <span class="eyebrow">YOUR RESOURCE IS READY</span>
+        <h2>Meet your new learning pathway.</h2>
+        <p id="resultSummary">UN-देखा created 3 ways to explore <strong id="resourceName">your material</strong>, all connected so you never lose your place.</p>
+        <div class="result-chips" id="resultChips"><span>◖ Audio lesson</span><span>Aa Simple notes</span><span>≋ Transcript</span></div>
+        <button class="primary-button full-button" type="button" id="openPathway">Open learning pathway <span aria-hidden="true">→</span></button>
+        <button class="dialog-link" type="button" id="convertAnother">＋ Convert another resource</button>
+      </div>
+    </dialog>
+
+    <dialog id="pathwayDialog" class="pathway-dialog" aria-labelledby="pathwayTitle">
+      <button class="dialog-close" type="button" aria-label="Close learning pathway" id="closePathwayDialog">×</button>
+      <span class="dialog-icon small" aria-hidden="true">◌</span>
+      <span class="eyebrow">YOUR ACCESSIBLE PATHWAY</span>
+      <h2 id="pathwayTitle">Study resource</h2>
+      <p id="pathwayMeta">Your formats are ready to use.</p>
+      <div class="pathway-output-list" id="pathwayOutputs"></div>
+      <button class="primary-button full-button" type="button" id="pathwayStart">Start learning <span aria-hidden="true">→</span></button>
+      <button class="dialog-link" type="button" id="pathwayConvertAnother">＋ Convert another resource</button>
+    </dialog>
+
+    <dialog id="learningFormatDialog" class="learning-format-dialog" aria-labelledby="learningFormatTitle">
+      <button class="dialog-close" type="button" aria-label="Close learning format" id="closeLearningFormatDialog">×</button>
+      <span class="eyebrow" id="learningFormatEyebrow">ACCESSIBLE FORMAT</span>
+      <h2 id="learningFormatTitle">Learning format</h2>
+      <p id="learningFormatLead">Your resource is ready.</p>
+      <div class="learning-format-content" id="learningFormatContent"></div>
+    </dialog>
+
+    <dialog id="textDialog" class="text-dialog" aria-labelledby="textDialogTitle">
+      <button class="dialog-close" type="button" aria-label="Close dialog" id="closeTextDialog">×</button>
+      <span class="dialog-icon small" aria-hidden="true">⌁</span>
+      <span class="eyebrow">START WITH TEXT</span>
+      <h2 id="textDialogTitle">Paste anything you’re studying.</h2>
+      <p>Lecture notes, an assignment brief, or even a video link — UN-देखा will meet you there.</p>
+      <label class="sr-only" for="studyText">Study material</label>
+      <textarea id="studyText" placeholder="Paste your notes or link here…"></textarea>
+      <button class="primary-button full-button" id="convertText" type="button">Transform this text <span aria-hidden="true">→</span></button>
+    </dialog>
+
+    <dialog id="profileDialog" class="profile-dialog" aria-labelledby="profileDialogTitle">
+      <button class="dialog-close" type="button" aria-label="Close profile" id="closeProfileDialog">×</button>
+      <span class="dialog-icon small" aria-hidden="true">◌</span>
+      <span class="eyebrow">APEX PROTOCOL · STUDENT PROFILE</span>
+      <h2 id="profileDialogTitle">Make UN-देखा feel like yours.</h2>
+      <p>Your name personalizes the dashboard and stays only in this browser.</p>
+      <label for="profileName">Your name</label>
+      <input id="profileName" type="text" maxlength="40" autocomplete="name" placeholder="Enter your name" />
+      <button class="primary-button full-button" id="saveProfile" type="button">Save my profile <span aria-hidden="true">→</span></button>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js?v=20260823-final-reset"></script>
+  </body>
+</html>
